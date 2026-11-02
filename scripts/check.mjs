@@ -21,5 +21,5 @@ for (const room of rooms) {
   assert(room.capacity > 0 && room.rate > 0, `Datos inválidos en ${room.id}`);
   assert((await stat(join(root, room.image))).size > 0, `Falta imagen de ${room.id}`);
 }
-for (const image of ['assets/exterior.jpg', 'assets/desayuno.jpg']) assert((await stat(join(root, image))).size > 0, `Falta ${image}`);
+for (const image of ['assets/exterior.jpg', 'assets/desayuno.jpg', 'favicon.svg']) assert((await stat(join(root, image))).size > 0, `Falta ${image}`);
 console.log('OK: estructura, avisos de demo, catálogo e imágenes');
