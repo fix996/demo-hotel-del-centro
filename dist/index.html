@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#20322d">
+  <meta name="theme-color" content="#f7f5ef">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Demo de hotel boutique con habitaciones y reserva simulada. Contenido y tarifas ilustrativos.">
-  <title>Altura Hotel · Habitaciones y reservas (demo)</title>
+  <meta name="description" content="Demo de hotel con habitaciones y consulta simulada. Imágenes, marca y servicios ilustrativos.">
+  <title>Hotel del Centro · Habitaciones (demo)</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="rooms.js" defer></script>
@@ -14,25 +14,31 @@
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <div class="demo-banner"><div class="wrap"><span>DEMO CONCEPTUAL · Hotel, imágenes y tarifas ilustrativos</span><a href="#alcance">Conocer el alcance ↓</a></div></div>
+  <div class="demo-bar">DEMO CONCEPTUAL · Hotel, habitaciones y fotos de ejemplo</div>
   <header class="site-header wrap" id="inicio">
-    <a href="#inicio" class="brand" aria-label="Altura Hotel, inicio"><span class="brand-icon" aria-hidden="true">✳</span><span>ALTURA<small>HOTEL</small></span></a>
-    <nav aria-label="Navegación principal"><a href="#habitaciones">Habitaciones</a><a href="#experiencia">La experiencia</a><a class="nav-book" href="#buscar">Elegí tu estadía <span aria-hidden="true">↗</span></a></nav>
+    <a class="brand" href="#inicio" aria-label="Hotel del Centro, inicio"><span class="brand-mark" aria-hidden="true">H</span><span>HOTEL <strong>DEL CENTRO</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="#habitaciones">Habitaciones</a><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo consultar</a></nav>
+    <a class="header-cta" href="#habitaciones">Ver habitaciones <span aria-hidden="true">↗</span></a>
   </header>
 
   <main id="contenido">
-    <section class="hero" aria-labelledby="hero-title"><img class="hero-image" src="assets/exterior.jpg" alt="Exterior ilustrativo de un hotel boutique en las montañas" width="1536" height="1024" fetchpriority="high"><div class="hero-shade"></div><div class="wrap hero-content"><p class="eyebrow">HOTEL DE MONTAÑA / DEMO</p><h1 id="hero-title">Donde cada día <em>empieza más despacio.</em></h1><p>Un refugio para mirar lejos, descansar bien y elegir una estadía a tu manera.</p><a href="#habitaciones" class="hero-link">Descubrí las habitaciones <span aria-hidden="true">↗</span></a></div><div class="hero-caption">UN LUGAR PARA ESTAR PRESENTE <span aria-hidden="true">01 / 03</span></div></section>
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="assets/fachada.jpg" alt="Fachada ilustrativa de un hotel de ciudad" width="1536" height="1024" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-content"><p class="eyebrow">HOTEL DEL CENTRO / DEMO</p><h1 id="hero-title">Un lugar cómodo para <span>descansar.</span></h1><p>Habitaciones para venir en pareja, con amigos o en familia. Mirá las opciones y hacé una consulta de ejemplo.</p><a class="button button-light" href="#habitaciones">Conocer habitaciones <span aria-hidden="true">→</span></a></div>
+    </section>
 
-    <section class="search-section wrap" id="buscar" aria-labelledby="search-title"><div class="search-heading"><p class="eyebrow">PLANEÁ TU ESCAPADA</p><h2 id="search-title">Buscá tu habitación.</h2><p>Las fechas ayudan a completar la simulación. No se consulta disponibilidad real.</p></div><form id="search-form" class="search-form"><label for="search-arrival">Entrada<input id="search-arrival" type="date" required></label><label for="search-departure">Salida<input id="search-departure" type="date" required></label><label for="search-guests">Huéspedes<select id="search-guests"><option value="1">1 huésped</option><option value="2" selected>2 huéspedes</option><option value="3">3 huéspedes</option><option value="4">4 huéspedes</option></select></label><button class="button button-dark" type="submit">Ver habitaciones <span aria-hidden="true">↗</span></button></form><p id="search-error" class="search-error" role="alert" hidden></p></section>
+    <section class="intro wrap" aria-label="Presentación"><div><span class="intro-icon" aria-hidden="true">⌂</span><strong>Atención cercana</strong><p>Estamos para ayudarte a elegir tu habitación.</p></div><div><span class="intro-icon" aria-hidden="true">▣</span><strong>Habitaciones para elegir</strong><p>Opciones dobles y familiares con fotos y detalles.</p></div><div><span class="intro-icon" aria-hidden="true">✓</span><strong>Consulta sencilla</strong><p>Contanos cuándo querés viajar y cuántas personas van.</p></div></section>
 
-    <section class="rooms-section" id="habitaciones" aria-labelledby="rooms-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">NUESTROS ESPACIOS / DEMO</p><h2 id="rooms-title">Una habitación para <em>cada viaje.</em></h2></div><p>Tres maneras de quedarse. Mirá las fotos, conocé los detalles y probá una reserva simulada.</p></div><div class="rooms-status"><p id="room-count" aria-live="polite"></p><button type="button" id="show-all" hidden>Mostrar todas</button></div><div class="room-grid" id="room-grid"></div></div></section>
+    <section class="rooms-section" id="habitaciones" aria-labelledby="rooms-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">HABITACIONES / DEMO</p><h2 id="rooms-title">Elegí la que va con tu viaje.</h2></div><p>Fotos, cantidad de personas y lo que incluye cada opción. Tocá una habitación para ver más y probar el pedido.</p></div><div class="room-grid" id="room-grid"></div></div></section>
 
-    <section class="experience wrap" id="experiencia" aria-labelledby="experience-title"><div class="experience-image"><img src="assets/desayuno.jpg" alt="Desayuno ilustrativo en una terraza con vista a las montañas" width="1536" height="1024" loading="lazy"></div><div class="experience-copy"><p class="eyebrow">MOMENTOS PARA RECORDAR</p><h2 id="experience-title">Una pausa que se siente <em>de verdad.</em></h2><p>Una mañana sin apuro, aire de montaña y tiempo para disfrutar el lugar. Esta escena representa cómo podría contarse la experiencia de un hotel.</p><div class="experience-features"><div><span aria-hidden="true">✳</span><strong>Desayuno</strong><small>Servicio de ejemplo</small></div><div><span aria-hidden="true">⌁</span><strong>Vistas</strong><small>Escenario ilustrativo</small></div><div><span aria-hidden="true">◌</span><strong>Descanso</strong><small>Habitaciones de ejemplo</small></div></div></div></section>
+    <section class="services wrap" id="servicios" aria-labelledby="services-title"><div class="services-heading"><p class="eyebrow">LO ESENCIAL</p><h2 id="services-title">Todo lo que necesitás, bien claro.</h2><p>Descansá con comodidad y consultanos lo que necesites antes de venir. Servicios ilustrativos para esta demo.</p></div><div class="service-grid"><article><span aria-hidden="true">⌁</span><h3>Wi-Fi</h3><p>Para seguir conectado durante tu estadía.</p></article><article><span aria-hidden="true">☕</span><h3>Desayuno</h3><p>Una forma tranquila de empezar el día.</p></article><article><span aria-hidden="true">◎</span><h3>Atención</h3><p>Te ayudamos a elegir la habitación adecuada.</p></article></div></section>
 
-    <section class="closing"><div class="wrap closing-content"><p class="eyebrow">ALTURA HOTEL / DEMO</p><h2>Tu próximo descanso <em>puede empezar acá.</em></h2><p>Elegí una habitación y recorré una reserva de ejemplo, sin pagos ni confirmación real.</p><a href="#habitaciones" class="button button-light">Ver habitaciones <span aria-hidden="true">↗</span></a></div></section>
+    <section class="how-section" id="como-funciona" aria-labelledby="how-title"><div class="wrap how-layout"><div><p class="eyebrow">CÓMO CONSULTAR</p><h2 id="how-title">Consultar es fácil.</h2><p>Elegís una habitación, escribís cuándo pensás viajar y cuántas personas van. La demo te muestra un resumen del pedido.</p><a class="button button-dark" href="#habitaciones">Elegir habitación <span aria-hidden="true">→</span></a></div><ol><li><span>01</span><div><h3>Mirá las habitaciones</h3><p>Compará fotos y capacidad.</p></div></li><li><span>02</span><div><h3>Contanos cuándo</h3><p>Escribí una fecha aproximada.</p></div></li><li><span>03</span><div><h3>Revisá el pedido</h3><p>El resumen es simulado; el hotel no recibe datos.</p></div></li></ol></div></section>
   </main>
 
-  <footer class="site-footer wrap" id="alcance"><div class="footer-brand">ALTURA <small>HOTEL</small></div><p>Demo conceptual no oficial. La marca, las fotografías, las habitaciones, los servicios y las tarifas son ilustrativos. No se guarda información, no se cobra y no se realiza ninguna reserva real.</p><a href="#inicio">Volver arriba ↑</a></footer>
-  <dialog id="room-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" id="close-dialog" aria-label="Cerrar habitación">×</button><div id="dialog-content"></div></dialog>
+  <footer class="site-footer wrap"><div class="footer-brand">HOTEL DEL CENTRO <small>DEMO</small></div><p>Marca, imágenes, habitaciones y servicios ilustrativos. El pedido es una simulación: no se envía ni se guarda información y no se confirma una reserva real.</p><a href="#inicio">Volver arriba ↑</a></footer>
+
+  <dialog id="room-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" id="close-dialog" aria-label="Cerrar detalle de habitación">×</button><div id="dialog-content"></div></dialog>
 </body>
 </html>

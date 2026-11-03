@@ -1,22 +1,18 @@
-# Altura Hotel — demo conceptual
+# Hotel del Centro — demo conceptual
 
-Sitio independiente de ejemplo para mostrar cómo podría verse y funcionar la web de un hotel boutique. La marca, las fotos, las habitaciones, los servicios y las tarifas son ilustrativos. El buscador filtra por capacidad; no consulta disponibilidad. La reserva calcula un total de ejemplo en el navegador y no envía ni guarda datos, no cobra y no confirma una estadía.
+Web independiente y ficticia para mostrar a negocios de alojamiento una página sencilla. Incluye tres habitaciones con fotos ilustrativas y un pedido de habitación simulado. El visitante escribe cuándo le gustaría viajar, elige huéspedes y noches, y ve un resumen. No se consulta disponibilidad ni precio, no se envían ni se guardan datos y no se confirma ninguna reserva.
 
 ## Abrir
 
-Abrí `dist/index.html` en un navegador. Para previsualizar con servidor local: desde `dist`, ejecutá `python -m http.server 8767` y visitá `http://localhost:8767/`.
+Abrí `dist/index.html` en un navegador. Para una vista con servidor local, desde `dist` ejecutá `python -m http.server 8767` y visitá `http://localhost:8767/`.
 
-## Estructura
+## Archivos
 
-- `dist/index.html`: estructura y textos de la web.
+- `dist/index.html`: estructura y textos.
 - `dist/styles.css`: diseño adaptable.
-- `dist/rooms.js`: único catálogo de habitaciones, capacidad y tarifas ilustrativas.
-- `dist/app.js`: búsqueda, detalles y reserva simulada.
-- `dist/assets/`: fotografías ilustrativas.
-- `scripts/check.mjs`: controles locales de estructura y contenido.
+- `dist/rooms.js`: catálogo ficticio de habitaciones.
+- `dist/app.js`: detalles y pedido simulado.
+- `dist/assets/`: fotos generadas para la demo.
+- `scripts/check.mjs`: comprobaciones locales.
 
-## Comprobar
-
-`node scripts/check.mjs`
-
-No hay instalación, paquetes JavaScript ni variables de entorno. Las tipografías se cargan desde Google Fonts cuando hay conexión; sin conexión se usan fuentes del sistema. Para usarla con un hotel real se necesitan contenidos y precios aprobados y un sistema de disponibilidad y reservas con servidor.
+Comprobar con `node scripts/check.mjs`. No requiere instalación, fuentes externas ni variables de entorno. Para un hotel real hacen falta fotos y servicios verificados, contacto autorizado y un sistema que reciba consultas o gestione disponibilidad.
