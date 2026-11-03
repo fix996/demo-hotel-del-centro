@@ -7,7 +7,7 @@ let lastOpener = null;
 
 roomGrid.innerHTML = rooms.map(room => `
   <article class="room-card">
-    <img src="${room.image}" alt="${room.alt}" width="1536" height="1024" loading="lazy">
+    <img src="${room.thumbnail}" alt="${room.alt}" loading="lazy">
     <div class="room-card-body">
       <p class="room-capacity">HASTA ${room.capacity} PERSONAS</p>
       <h3>${room.name}</h3>
@@ -30,11 +30,10 @@ function openRoom(room, opener) {
       <form id="request-form" class="request-form">
         <h3>Consultá esta habitación</h3>
         <p>Escribí cuándo te gustaría venir, aunque sea una fecha aproximada.</p>
-        <label for="travel-date">¿Para cuándo la necesitás?</label>
+        <label for="travel-date">¿Entre qué fechas querés venir?</label>
         <input id="travel-date" name="travel-date" type="text" placeholder="Ej.: del 12 al 15 de noviembre" minlength="4" maxlength="80" required autocomplete="off">
         <div class="request-fields">
           <div><label for="guest-count">¿Cuántas personas?</label><select id="guest-count" name="guests">${Array.from({ length: room.capacity }, (_, index) => `<option value="${index + 1}">${index + 1} ${index === 0 ? "persona" : "personas"}</option>`).join("")}</select></div>
-          <div><label for="night-count">¿Cuántas noches?</label><select id="night-count" name="nights"><option value="1">1 noche</option><option value="2">2 noches</option><option value="3">3 noches</option><option value="4 o más">4 o más noches</option></select></div>
         </div>
         <p class="request-note">Demo: no se consulta disponibilidad ni precio. No se envía información ni se confirma una reserva.</p>
         <button type="submit" class="button button-dark">Simular pedido <span aria-hidden="true">→</span></button>
@@ -73,13 +72,12 @@ dialogContent.addEventListener("submit", event => {
   form.querySelector("#travel-date").setCustomValidity("");
   const room = roomById.get(lastOpener.dataset.room);
   const guests = Number(form.querySelector("#guest-count").value);
-  const nights = form.querySelector("#night-count").value;
   const result = dialogContent.querySelector("#request-result");
   result.replaceChildren();
   const heading = document.createElement("strong");
   heading.textContent = "Pedido de ejemplo preparado";
   const summary = document.createElement("p");
-  summary.textContent = `${room.name} · ${guests} ${guests === 1 ? "persona" : "personas"} · ${nights} ${nights === "1" ? "noche" : "noches"} · ${dateText}.`;
+  summary.textContent = `${room.name} · ${guests} ${guests === 1 ? "persona" : "personas"} · ${dateText}.`;
   const note = document.createElement("small");
   note.textContent = "Este pedido no se envió al hotel. La disponibilidad y el precio quedan sujetos a confirmación.";
   result.append(heading, summary, note);

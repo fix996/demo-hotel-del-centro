@@ -21,6 +21,7 @@ assert(new Set(rooms.map(room => room.id)).size === rooms.length, 'IDs duplicado
 for (const room of rooms) {
   assert(room.capacity > 0 && room.features.length > 0, `Datos inválidos en ${room.id}`);
   assert((await stat(join(root, room.image))).size > 0, `Falta imagen de ${room.id}`);
+  assert((await stat(join(root, room.thumbnail))).size > 0, `Falta miniatura de ${room.id}`);
 }
 for (const image of ['assets/fachada.jpg', 'favicon.svg']) assert((await stat(join(root, image))).size > 0, `Falta ${image}`);
 console.log('OK: estructura, avisos de demo, catálogo e imágenes');

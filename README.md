@@ -1,6 +1,6 @@
 # Hotel del Centro — demo conceptual
 
-Web independiente y ficticia para mostrar a negocios de alojamiento una página sencilla. Incluye tres habitaciones con fotos ilustrativas y un pedido de habitación simulado. El visitante escribe cuándo le gustaría viajar, elige huéspedes y noches, y ve un resumen. No se consulta disponibilidad ni precio, no se envían ni se guardan datos y no se confirma ninguna reserva.
+Web independiente y ficticia para mostrar a negocios de alojamiento una página sencilla. Incluye tres habitaciones con fotos ilustrativas y un pedido de habitación simulado. El visitante escribe entre qué fechas le gustaría viajar, elige huéspedes y ve un resumen. No se consulta disponibilidad ni precio, no se envían ni se guardan datos y no se confirma ninguna reserva.
 
 ## Abrir
 
