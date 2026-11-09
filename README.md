@@ -2,6 +2,8 @@
 
 Web independiente y ficticia para mostrar a negocios de alojamiento una página sencilla. Incluye tres habitaciones con fotos ilustrativas y un pedido de habitación simulado. El visitante escribe entre qué fechas le gustaría viajar, elige huéspedes y ve un resumen. No se consulta disponibilidad ni precio, no se envían ni se guardan datos y no se confirma ninguna reserva.
 
+También muestra el hotel, opiniones ficticias y espacios preparados para dirección, recepción y redes. Los datos de contacto y las reseñas deben reemplazarse por información real autorizada antes de usarla para un negocio.
+
 ## Abrir
 
 Abrí `dist/index.html` en un navegador. Para una vista con servidor local, desde `dist` ejecutá `python -m http.server 8767` y visitá `http://localhost:8767/`.
